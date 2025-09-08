@@ -4,40 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LIDAR Sensors - FTC Team 30625</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/material-style.css">
+  <style>
+    .hero {
+      background: linear-gradient(to right, #2196F3, #1976D2);
+      color: white;
+      padding: 80px 20px;
+      width: 100%;
+    }
+    .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">LIDAR Sensors - FTC Team 30625</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="outreach.html">Outreach</a></li>
-        <li><a href="sponsors.html">Sponsors</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero container">
-    <h1 class="h3">Welcome to LIDAR Sensors - FTC Team 30625</h1>
-    <p class="subtitle1">Building robots, learning together, and inspiring our community 🚀</p>
-    <a href="sponsors.html" class="btn button-text">Support Our Team</a>
-  </section>
+  <!-- Navbar include -->
+  <div id="navbar"></div>
 
-  <section class="highlights container">
-    <h2 class="h5">Our Mission</h2>
-    <p class="body1">
-      We are passionate students exploring STEM through robotics. 
-      Our goal is to innovate, collaborate, and inspire others in our community while having fun!
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Welcome to LIDAR Sensors</h2>
+      <p>FTC Team #30625 – Exploring, Building, and Innovating!</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container section center-align">
+    <h4>Our Journey</h4>
+    <p>
+      We are LIDAR Sensors, a passionate robotics team competing in the FIRST Tech Challenge.
+      We’re on a mission to innovate, learn, and grow together while making an impact in our community.
     </p>
-  </section>
+  </div>
 
-  <footer>
-    <p class="body2">&copy; 2025 LIDAR Sensors - FTC Team 30625 | All Rights Reserved</p>
+  <!-- Footer -->
+  <footer class="page-footer blue darken-2">
+    <div class="container center-align">
+      © 2025 LIDAR Sensors | FTC Team #30625 | All Rights Reserved
+    </div>
   </footer>
+
+  <!-- JS to load navbar -->
+  <script>
+    async function loadNavbar() {
+      const response = await fetch("partials/navbar.html");
+      document.getElementById("navbar").innerHTML = await response.text();
+    }
+    loadNavbar();
+  </script>
 </body>
 </html>
