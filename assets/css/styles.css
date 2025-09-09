@@ -81,15 +81,16 @@ footer {
 
 /* Center the last student card if odd number of cards */
 .team-members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1rem;
+  justify-items: center; /* centers items in their grid cell */
 }
 
 .team-members .team-card {
-  flex: 1 1 180px;
-  max-width: 220px;
+  width: 100%;
+  max-width: 220px; /* keeps cards from stretching too wide */
 }
+
 
   
