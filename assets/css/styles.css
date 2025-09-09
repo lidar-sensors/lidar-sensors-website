@@ -47,4 +47,22 @@
     font-size: 1.6rem;
     font-weight: 600;
   }
+
+/* Ensure main content takes at least full viewport height minus header/footer */
+body, html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+main {
+  flex: 1 0 auto; /* main grows to fill remaining space */
+}
+
+/* Optional: Give footer a consistent look and spacing */
+footer {
+  flex-shrink: 0;
+}
+
   
