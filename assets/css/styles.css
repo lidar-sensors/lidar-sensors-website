@@ -100,10 +100,13 @@ footer {
 
 /* Coaches images */
 .team-leaders .team-card img {
-  width: 100%;
-  height: 200px;                 /* fixed uniform height */
-  object-fit: cover;             /* crop neatly without distortion */
-  border-radius: 6px;
+  width: 180px;       /* fixed width */
+  height: 180px;      /* fixed height */
+  object-fit: cover;  /* crop neatly */
+  border-radius: 50%; /* optional: makes them circular like profile pics */
+  display: block;
+  margin: 0 auto 10px auto; /* center image and add spacing below */
 }
+
 
 
