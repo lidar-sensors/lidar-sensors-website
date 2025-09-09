@@ -4,18 +4,12 @@
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #1976d2, #42a5f5); /* dark-to-light blue */
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-    
-    /* NEW: make hero take at least 70% of viewport height */
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertically center content */    
-  }
-  
+  background: linear-gradient(to right, #1976d2, #42a5f5);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
   .hero h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -69,6 +63,15 @@ main {
 /* Optional: Give footer a consistent look and spacing */
 footer {
   flex-shrink: 0;
+}
+
+.home-main {
+  min-height: 60vh; /* ensures homepage body is tall enough */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center if short */
+  padding-top: 2rem;      /* space above content */
+  padding-bottom: 2rem;   /* space below content */
 }
 
   
