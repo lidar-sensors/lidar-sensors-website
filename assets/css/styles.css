@@ -4,48 +4,46 @@
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #1976d2, #42a5f5);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
+  background: linear-gradient(to right, #1976d2, #42a5f5);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
 }
-  .hero h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 1.3rem;
-    font-weight: 300;
-  }
-  
-  /* Team Cards */
-  .card {
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  
-  .card .card-content h5 {
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  /* Footer */
-  footer {
-    margin-top: 40px;
-    padding: 20px 0;
-    text-align: center;
-    background: #1565c0;
-    color: white;
-    font-size: 0.9rem;
-  }
-  
-  /* Navbar brand logo size */
-  nav .brand-logo {
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
+.hero h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* Team Cards */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card .card-content h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  background: #1565c0;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Navbar brand logo size */
+nav .brand-logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
 
 /* Ensure main content takes at least full viewport height minus header/footer */
 body, html {
@@ -54,81 +52,60 @@ body, html {
   flex-direction: column;
   margin: 0;
 }
-
 main {
   flex: 1 0 auto; /* main grows to fill remaining space */
 }
-
 /* Optional: Give footer a consistent look and spacing */
 footer {
   flex-shrink: 0;
 }
 
+/* Homepage layout helper */
 .home-main {
-  min-height: 60vh; /* ensures homepage body is tall enough */
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertically center if short */
-  padding-top: 2rem;      /* space above content */
-  padding-bottom: 2rem;   /* space below content */
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-/* Center team section column headers */
+/* Section headers centered */
 .row > .col h5 {
   text-align: center;
-  margin-bottom: 1rem; /* spacing between header and cards */
+  margin-bottom: 1rem;
 }
 
-/* Center the last student card if odd number of cards */
-.team-members {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-  justify-items: center; /* centers items in their grid cell */
-}
-
-/* Coaches column cards */
-.team-leaders .team-card {
-  height: auto;                  /* no forced height */
-  max-width: 280px;              /* keeps card narrower */
-  margin: 0 auto;                /* center card in column */
+/* Student cards grid */
+.students .row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.students .card {
   text-align: center;
 }
 
-/* Coaches images */
-.team-leaders .team-card img {
-  width: 180px;       /* fixed width */
-  height: 180px;      /* fixed height */
-  object-fit: cover;  /* crop neatly */
-  border-radius: 50%; /* optional: makes them circular like profile pics */
-  display: block;
-  margin: 0 auto 10px auto; /* center image and add spacing below */
-}
-
-/* About page: Coaches & Mentors headshots (override Materialize) */
-#about-page .team-leaders .card {
-  max-width: 280px;
-  margin: 0 auto 16px;
+/* Coaches & Mentors cards */
+.coaches .card {
+  max-width: 260px;
+  margin: 0 auto 1.5rem;
   text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
 }
-
-#about-page .team-leaders .card .card-image {
-  height: 180px;          /* fixed container height */
-  max-width: 240px;       /* keeps photo area from getting too wide */
-  margin: 0 auto;         /* center the image area */
-  overflow: hidden;       /* crop overflow */
-  border-radius: 6px;     /* nice rounded corners */
+.coaches .card .card-image {
+  width: 120px;
+  height: 120px;
+  margin: 15px auto 10px;
+  overflow: hidden;
+  border-radius: 50%;
 }
-
-#about-page .team-leaders .card .card-image img {
+.coaches .card .card-image img {
   width: 100%;
-  height: 100%;           /* fill the fixed-height container */
-  object-fit: cover;      /* crop without distortion */
+  height: 100%;
+  object-fit: cover;
   display: block;
+  border-radius: 50%;
 }
-
-
-
