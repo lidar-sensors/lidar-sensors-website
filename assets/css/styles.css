@@ -87,16 +87,23 @@ footer {
   justify-items: center; /* centers items in their grid cell */
 }
 
-.team-members .team-card {
-  width: 100%;
-  max-width: 220px; /* keeps cards from stretching too wide */
+/* Coaches column cards */
+.team-leaders .team-card {
+  height: auto;                  /* no forced height */
+  max-width: 280px;              /* keeps card narrower */
+  margin: 0 auto;                /* center card in column */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Fix image size only for coaches & mentors */
+/* Coaches images */
 .team-leaders .team-card img {
   width: 100%;
-  height: 220px;       /* adjust as needed */
-  object-fit: cover;   /* avoids stretching */
+  height: 200px;                 /* fixed uniform height */
+  object-fit: cover;             /* crop neatly without distortion */
   border-radius: 6px;
 }
+
 
