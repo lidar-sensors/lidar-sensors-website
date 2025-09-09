@@ -8,6 +8,12 @@
     color: white;
     padding: 80px 20px;
     text-align: center;
+    
+    /* NEW: make hero take at least 70% of viewport height */
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center content */    
   }
   
   .hero h1 {
