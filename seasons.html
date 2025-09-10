@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seasons - Past & Present</title>
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="assets/css/materialize.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* History Section Styling */
+    .seasons-section {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .seasons-section h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .seasons-section p {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
+
+    /* History Grid - uniform tile heights */
+    .seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+  gap: 20px; /* spacing between tiles */
+  margin-top: 20px;
+}
+
+    /* History card base */
+    .seasons-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Ensure media (images/videos) scale properly */
+    .seasons-card img,
+    .seasons-card video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* Content spacing inside tile */
+    .seasons-card h3,
+    .seasons-card p {
+      padding: 0 1rem 0.5rem;
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
+    .seasons-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .stacked-images {
+      display: flex;
+      flex-direction: column;
+      height: 200px; /* adjust to fit tile */
+      justify-content: space-between; /* spaces images evenly */
+    }
+
+    .stacked-images img {
+      width: 100%;
+      height: 49%; /* two images take full height together with small gap */
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .side-by-side-images {
+      display: flex;
+      gap: 0.5rem; /* small spacing between images */
+      height: 200px; /* adjust to match other tile heights */
+    }
+
+    .side-by-side-images img {
+      width: 50%;      /* each image takes half the tile width */
+      height: 100%;    /* fill tile height */
+      object-fit: cover; /* crops neatly without distortion */
+      border-radius: 6px;
+    }
+
+
+    /* Tile with 4 portrait images */
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.5rem;          /* spacing between images */
+      width: 100%;
+    }
+
+    .mini-grid img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;  /* keeps portrait proportion */
+      object-fit: cover;    /* crops excess neatly */
+      border-radius: 6px;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (loaded dynamically) -->
+  <div id="navbar-container"></div>
+
+  <!-- FTC 2025 Section -->
+  <section class="seasons-section container">
+    <h3>
+      <img src="assets/images/decode_logo.png" alt="DECODE 2025 Logo" style="height:40px;">
+      FTC - 2025
+    </h3>
+    <p>
+      We are already engaged and excited for this season, preparing to take on new challenges and competitions in the FIRST Tech Challenge.
+    </p>
+    <div class="seasons-grid">
+      <div class="seasons-card">
+        <img src="assets/images/Team-Season-Reveal-Event.jpeg" alt="FTC 2025 Robot">
+        <p>Enjoying the vibe at the Season Reveal Event at Marcus High School</p>
+      </div>
+      <!--
+      <div class="seasons-card">
+        <video controls>
+          <source src="assets/videos/ftc-2025-practice.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Highlights from our FTC 2025 practice session.</p>
+      </div>
+      -->
+      <div class="seasons-card">
+        <div class="mini-grid">
+          <img src="assets/images/at-work-v1.jpeg" alt="Working Session">
+          <img src="assets/images/at-work-v2.jpeg" alt="Working Session">
+          <img src="assets/images/at-work-v1.jpeg" alt="Working Session">
+          <img src="assets/images/at-work-v2.jpeg" alt="Working Session">  
+        </div>
+        <div class="card-content">
+          <p>At work to decode FTC 2025</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FLL 2024 Section -->
+  <section class="section">
+    <div class="container">
+      <h4 class="center-align">
+        <img src="assets/images/submerged_logo.png" alt="FLL Submerged 2024 Logo" style="height:50px; vertical-align:middle; margin-right:10px;">
+        FLL – 2024
+      </h4>
+      <p class="center-align">
+        In 2024, we participated as the <strong>Builder Legends</strong> in the FIRST LEGO League Submerged competition.
+      </p>
+
+      <div class="seasons-grid">
+        <!-- Tile 1 -->
+        <div class="seasons-card">
+          <video controls>
+            <source src="assets/videos/fll-comp.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="body2">Robot in action at a FLL qualifier</p>
+        </div>
+
+        <!-- Tile 2 -->
+        <div class="seasons-card">
+          <img src="assets/images/fll-leader-board.jpg" alt="FLL Event 1">
+          <p class="body2">Builder Legends on the Leader Board</p>
+        </div>        
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Lidar Sensors FTC Team 30625. All rights reserved.</p>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="assets/js/materialize.min.js"></script>
+
+  <!-- Load Navbar & Update Year -->
+  <script>
+    fetch("partials/navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+      });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
