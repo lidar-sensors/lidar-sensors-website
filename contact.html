@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - LIDAR Sensors FTC Team 30625</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/material-style.css">
+
+  <!-- Material Icons for hamburger -->
+  <link rel="stylesheet" href="assets/css/material-icons.css">  
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="assets/css/materialize.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">LIDAR Sensors - FTC Team 30625</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="outreach.html">Outreach</a></li>
-        <li><a href="sponsors.html">Sponsors</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="contact container">
-    <h1 class="h3">Contact Us</h1>
-    <p class="body1">
-      We would love to hear from you! Whether you're interested in sponsoring, volunteering, or learning more about our robotics journey, please reach out using the form below.
-    </p>
+  <!-- Navbar (loaded dynamically) -->
+  <div id="navbar-container"></div>
 
-    <!-- Embedded Google Form -->
-    <div class="google-form-container" style="margin-top:1.5rem;">
-      <p>If you’d like to connect with our team, reach out at: <a href="mailto:sensorslidar@gmail.com">sensorslidar@gmail.com</a></p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>We’d love to hear from you! Reach out to learn more or get involved.</p>
     </div>
   </section>
 
+  <!-- Main Content -->
+  <main class="container home-main">
+    <div class="section center">
+      <p>
+        If you’d like to connect with our team, reach out at:
+      </p>
+      <a href="mailto:sensorslidar@gmail.com" class="btn blue lighten-2">Email Us</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <p class="body2">&copy; 2025 LIDAR Sensors - FTC Team 30625 | All Rights Reserved</p>
+    <p>© <span id="year"></span> Lidar Sensors FTC Team 30625. All rights reserved.</p>
   </footer>
+
+  <!-- Materialize JS -->
+  <script src="assets/js/materialize.min.js"></script>
+
+  <!-- Load Navbar and initialize sidenav -->
+  <script>
+    fetch("partials/navbar.html")
+      .then(resp => resp.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+
+        // initialize sidenav now that the HTML exists
+        if (window.M && M.Sidenav) {
+          var elems = document.querySelectorAll('.sidenav');
+          M.Sidenav.init(elems);
+        } else {
+          console.warn("Materialize JS (M) not found. Ensure materialize.min.js is loaded before this script.");
+        }
+      })
+      .catch(err => {
+        console.error("Failed to load navbar:", err);
+      });
+
+    // Update footer year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
