@@ -1,0 +1,94 @@
+/* === Seasons Page Layout === */
+.seasons-page .season-header-block {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .season-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .season-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .season-title-image {
+    height: 50px;
+    width: auto;
+    border-radius: 6px;
+  }
+  .season-description {
+    margin-top: 6px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* === Grid + Cards === */
+  .season-items-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .season-items-row .col {
+    display: flex;
+  }
+  .season-items-row .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* === Image cards (cropped 16:9) === */
+  .card .card-image.img-card {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+  .card .card-image.img-card > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* === Video cards (natural aspect, controls safe) === */
+  .card .card-image.video-card {
+    position: relative;
+    overflow: visible;
+  }
+  .card .card-image.video-card > .season-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #000;
+  }
+  
+  /* Optional: maintain same tile heights */
+  .season-items-row .card .card-content {
+    min-height: 60px;
+  }
+  
+  /* === Gallery (2x2 portrait images inside one card) === */
+.card .card-image.gallery-card {
+    position: relative;
+    padding: 4px;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-template-rows: 1fr 1fr;    /* 2 rows */
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+  

@@ -1,0 +1,49 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>  
+    <link rel="stylesheet" href="{{ '/assets/css/materialize.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/material-icons.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/seasons.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">    
+</head>
+
+  <!-- Navbar container -->
+  <div id="navbar-container"></div>
+
+<main>
+    {{ content }}
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Lidar Sensors FTC Team 30625. All rights reserved.</p>
+</footer>
+
+<script src="{{ '/assets/js/materialize.min.js' | relative_url }}"></script>
+<script>
+  // load navbar partial, insert, then init the sidenav
+  fetch("partials/navbar.html")
+    .then(resp => resp.text())
+    .then(html => {
+      document.getElementById("navbar-container").innerHTML = html;
+      if (window.M && M.Sidenav) {
+        var elems = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(elems);
+      }
+    })
+    .catch(err => console.error("Failed to load navbar:", err));
+
+  // update year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  
+  
+    
+    
+    
+    
+    
+    
+    
+
+  

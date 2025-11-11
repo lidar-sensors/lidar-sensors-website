@@ -1,0 +1,10 @@
+# _config.yml  (minimal, seasons-only)
+url: "https://lidar-sensors.github.io"
+baseurl: "/lidar-sensors-website"   # keep for GitHub Project Pages
+
+collections:
+  seasons:
+    output: true
+    permalink: /seasons/:name/
+
+

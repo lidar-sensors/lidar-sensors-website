@@ -1,0 +1,65 @@
+---
+layout: seasons_base
+title: Seasons
+permalink: /seasons-jekyll.html
+---
+
+<section class="container seasons-page">
+  {% assign sorted_seasons = site.seasons | sort: "rank" | reverse %}
+
+  {% for season in sorted_seasons %}
+    <!-- === Season header block === -->
+    <div class="row season-header-block">
+      <div class="col s12">
+        <div class="season-title-wrapper">
+          {% if season.title_image %}
+            <img src="{{ season.title_image | relative_url }}" alt="{{ season.title }}" class="season-title-image">
+          {% endif %}
+          <h3 class="season-title">{{ season.title }}</h3>
+        </div>
+        {% if season.header %}
+          <p class="season-description">{{ season.header }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- === Season items grid === -->
+    <div class="row season-items-row">
+      {% for item in season.items %}
+        <div class="col s12 m6">
+          <div class="card hoverable">
+
+            {% if item.type == "video" %}
+            <div class="card-image video-card">
+              <video controls playsinline preload="auto" class="season-video">
+                <source src="{{ item.file | relative_url }}" type="video/mp4">
+              </video>
+            </div>
+          
+          {% elsif item.type == "image" %}
+            <div class="card-image img-card">
+              <img src="{{ item.url | relative_url }}" alt="{{ item.caption }}">
+            </div>
+          
+          {% elsif item.type == "gallery" %}
+            <div class="card-image gallery-card">
+              <div class="gallery-grid">
+                {% for g in item.images %}
+                  <div class="gallery-cell">
+                    <img src="{{ g.url | relative_url }}" alt="{{ g.alt }}">
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          
+
+            <div class="card-content">
+              <p>{{ item.caption }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>
