@@ -110,3 +110,37 @@ footer {
   display: block;
   border-radius: 50%;
 }
+
+/* Make columns/tiles equal height within this row only */
+.sponsor-logos .col { display: flex; }
+.sponsor-card { display: flex; flex-direction: column; width: 100%; }
+
+/* Uniform media area so both tiles match vertically */
+.sponsor-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;      /* tweak to taste (160–200px works well) */
+  padding: 20px;
+  background: #fff;   /* keep white so logos/SVG look similar */
+}
+
+/* Real logo sizing */
+.sponsor-logo {
+  max-height: 140px;  /* must be < .sponsor-media height */
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+/* Placeholder SVG sizing */
+.sponsor-logo-svg {
+  height: 140px;      /* mirror the image rule */
+  width: auto;
+  display: block;
+}
+
+/* Reduce Materialize gutters just for this row */
+.row.tight-gutters { margin-left: -0.25rem; margin-right: -0.25rem; }
+.row.tight-gutters .col { padding-left: 0.25rem; padding-right: 0.25rem; }
