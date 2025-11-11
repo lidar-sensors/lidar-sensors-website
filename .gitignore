@@ -1,0 +1,22 @@
+# === Jekyll build output ===
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# === Ruby/Bundler ===
+vendor/
+.bundle/
+Gemfile.lock
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Node (if you ever add frontend tooling) ===
+node_modules/
+
+# === Logs and temp files ===
+*.log
+*.tmp
+*.swp
